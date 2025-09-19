@@ -1,21 +1,18 @@
 //
-//  ContentView.swift
+//  HomePage.swift
 //  GetCookingiOS
 //
 //  Created by zhubiao07 on 2025/9/18.
 //
 
-import SwiftData
 import SwiftUI
 
-struct ContentView: View {
-
+struct HomePage: View {
     var body: some View {
-        TabbarView()
+        Text("这是首页")
     }
-
 }
 
 #Preview {
-    ContentView()
+    HomePage()
 }
