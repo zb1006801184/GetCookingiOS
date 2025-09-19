@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct HomeTopView: View {
-    // 搜索输入本地状态
-    @State private var searchText: String = ""
+    // 搜索输入绑定状态
+    @Binding var searchText: String
+    
+    
     var body: some View {
         HStack {
             //1. 左侧添加按钮
@@ -33,7 +35,7 @@ struct HomeTopView: View {
                     .disableAutocorrection(true)
             }
             .padding(.horizontal, 12)
-            .frame(height: 44)
+            .frame(height: 36)
             .background(Color(hex: "#f5f5f5"))
             .cornerRadius(8)
             
@@ -58,5 +60,5 @@ struct HomeTopView: View {
 }
 
 #Preview {
-    HomeTopView()
+    HomeTopView(searchText: .constant(""))
 }
