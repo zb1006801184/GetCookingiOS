@@ -13,12 +13,33 @@ struct HomePage: View {
     
     var body: some View {
         ScrollView {
+            //1. 顶部搜索栏
             HomeTopView(searchText: $viewModel.searchText)
             Spacer().frame(height: 8)
+            //2. 顶部菜单栏
             HomeTopMenuView(onMenuItemTap: viewModel.onMenuClick)
+            
+            //3. 顶部图片展示
+            topImageView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+    
+    
+    // 顶部展示图片
+    private func topImageView() -> some View {
+        HStack{
+            Image("home_1")
+                .resizable()
+                .scaledToFill()
+            Spacer().frame(width: 11)
+            Image("home_2")
+                .resizable()
+                .scaledToFill()
+        }
+        .padding(.horizontal, 18)
+    }
+    
 }
 
 #Preview {
