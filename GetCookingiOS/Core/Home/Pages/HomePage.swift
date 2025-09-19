@@ -9,7 +9,10 @@ import SwiftUI
 
 struct HomePage: View {
     var body: some View {
-        Text("这是首页")
+        ScrollView {
+            HomeTopView()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
