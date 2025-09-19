@@ -21,6 +21,10 @@ struct HomePage: View {
             
             //3. 顶部图片展示
             topImageView()
+            Spacer().frame(height: 16)
+
+            //4. 轮播图
+            HomeBannerView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
