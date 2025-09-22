@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeADView: View {
     var body: some View {
-        VStack {
+        VStack (spacing: 0) {
             Image("home_ad_1")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -19,6 +19,7 @@ struct HomeADView: View {
                 .clipped()
             adTextView()
         }
+        .padding(.vertical, 16)
     }
 
     //ad 文本
@@ -50,6 +51,7 @@ struct HomeADView: View {
             }
         }
         .frame(maxWidth: .infinity)
+        .frame(height: 48)
         .padding(.vertical, 11)
         .padding(.horizontal, 18)
     }
