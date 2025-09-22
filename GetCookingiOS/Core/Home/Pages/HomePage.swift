@@ -25,6 +25,9 @@ struct HomePage: View {
 
             //4. 轮播图
             HomeBannerView()
+            
+            //5. 广告
+            HomeADView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
