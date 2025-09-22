@@ -9,6 +9,8 @@ import Foundation
 
 
 class HomeViewModel: ObservableObject {
+    
+    //搜索框文字
     @Published var searchText: String = ""
     
     //菜单点击

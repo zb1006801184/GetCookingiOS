@@ -28,6 +28,11 @@ struct HomePage: View {
             
             //5. 广告
             HomeADView()
+            
+            //6. 周菜谱列表
+                HomeWeekFoodView(dataList: HomeMockDataManager.weekFoodDataList())
+            //7. 周菜谱列表
+                HomeWeekFoodView(dataList: HomeMockDataManager.weekFoodDataList())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

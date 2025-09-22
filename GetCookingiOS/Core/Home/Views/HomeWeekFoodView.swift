@@ -8,11 +8,45 @@
 import SwiftUI
 
 struct HomeWeekFoodView: View {
+    
+    var dataList: [HomeWeekFoodModel]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HomeCellHeaderView(title: "本周食材包", buttonTitle: "查看全部")
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 15) {
+                    ForEach(dataList) { item in
+                        cellItemView(
+                            model: item
+                        )
+                    }
+                }
+                .padding(.horizontal)
+            }
+        }
     }
+    
+    
+    
+    
+    //cell Item View
+    private func cellItemView(model:HomeWeekFoodModel) -> some View {
+        VStack {
+            Image(model.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 120, height: 120)
+                .clipped()
+                .cornerRadius(10)
+        }
+    }
+    
+    
 }
 
 #Preview {
-    HomeWeekFoodView()
+    HomeWeekFoodView(
+        dataList: HomeMockDataManager.weekFoodDataList()
+    )
 }
