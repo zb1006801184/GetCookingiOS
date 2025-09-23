@@ -12,13 +12,17 @@ struct MarketPage: View {
     @StateObject var viewModel = MarketViewModel()
     var body: some View {
         ScrollView {
+            //1. 顶部搜索栏
             HomeTopView(
                 searchText: $viewModel.searchText,
-                leftMenuIconName: "bag.badge.plus",
-                rightDateIconName: "slider.horizontal.3"
+                leftMenuIconName: "paperplane",
+                rightDateIconName: "cart.fill"
             )
+            //2. 市集菜单栏
+            MarketMenuView()
         }
     }
+
 }
 
 #Preview {
