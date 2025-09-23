@@ -10,6 +10,15 @@ import SwiftUI
 struct HomeTopView: View {
     // 搜索输入绑定状态
     @Binding var searchText: String
+    //左侧菜单图标名称
+    var leftMenuIconName: String = "plus"
+    //右侧日期图标名称
+    var rightDateIconName: String = "briefcase"
+    
+    //左侧菜单点击回调
+    var onMenuClick: (() -> Void)? = nil
+    //右侧日期点击回调
+    var onDateClick: (() -> Void)? = nil
     
     
     var body: some View {
@@ -17,7 +26,7 @@ struct HomeTopView: View {
             //1. 左侧添加按钮
             Button(action: {
             }) {
-                Image(systemName: "plus")
+                Image(systemName: leftMenuIconName)
                     .foregroundColor(Color(hex: "#383838"))
                     .font(.system(size: 28, weight: .medium))
             }
@@ -43,7 +52,7 @@ struct HomeTopView: View {
             //3. 右侧日期按钮
             Button(action: {
             }) {
-                Image(systemName: "briefcase")
+                Image(systemName: rightDateIconName)
                     .foregroundColor(Color(hex: "#383838"))
                     .font(.system(size: 28, weight: .medium))
             }.frame(
@@ -60,5 +69,8 @@ struct HomeTopView: View {
 }
 
 #Preview {
-    HomeTopView(searchText: .constant(""))
+    HomeTopView(searchText: .constant(""),
+                leftMenuIconName: "plus",
+                rightDateIconName: "briefcase"
+    )
 }
