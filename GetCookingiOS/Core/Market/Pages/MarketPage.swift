@@ -20,6 +20,8 @@ struct MarketPage: View {
             )
             //2. 市集菜单栏
             MarketMenuView()
+            //3. 新人礼包
+            MarketNewUserGiftView()
         }
     }
 
